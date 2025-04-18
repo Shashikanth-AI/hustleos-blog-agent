@@ -5,8 +5,7 @@ import streamlit as st
 from openai import OpenAI
 
 # Use Streamlit Secrets for secure API key access
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-
+client = OpenAI(api_key=st.secrets["openai"]["api_key"])
 # Prompt builder
 def get_prompt(topic):
     return f"""
