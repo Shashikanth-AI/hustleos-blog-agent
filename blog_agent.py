@@ -2,12 +2,10 @@ import os
 import json
 from datetime import datetime
 import streamlit as st
-from dotenv import load_dotenv, find_dotenv
 from openai import OpenAI
 
-# Load environment variables
-load_dotenv(find_dotenv())
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+# Use Streamlit Secrets for secure API key access
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # Prompt builder
 def get_prompt(topic):
